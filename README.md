@@ -1,6 +1,6 @@
-This is my API-scraper for the Let's Connect project.
+# This is my API-scraper for the Let's Connect project.
 
-SETUP: 
+### SETUP: 
 1. download nodejs from https://nodejs.org/en
 2. npm init
 3. npm install puppeteer
