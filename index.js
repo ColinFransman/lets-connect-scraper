@@ -19,7 +19,7 @@ const getData = async () => {
     // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
     // - no default viewport (`defaultViewport: null` - website page will be in full width and height)
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         defaultViewport: null,
         timeout: 0,
     });
@@ -111,7 +111,7 @@ const getData = async () => {
 let data = getData();
 
 app.listen(port, () => {
-    console.log(`Deze app is te bereiken op: http://localhost:${port}`);
+    console.log(`Deze app is te bereiken op: http://localhost:${port}/getData`);
 });
 
 app.use(express.urlencoded({ extended: true, }));
