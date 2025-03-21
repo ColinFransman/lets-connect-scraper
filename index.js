@@ -6,7 +6,7 @@ config();
 import { createRequire } from "module";
 import { arrayBuffer } from "stream/consumers";
 const require = createRequire(import.meta.url);
-const express = require('express');
+const express = import('express');
 const app = express();
 const port = process.env.PORT || 4001;
 
@@ -22,7 +22,7 @@ const getData = async () => {
     // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
     // - no default viewport (`defaultViewport: null` - website page will be in full width and height)
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         defaultViewport: null,
         timeout: 0,
     });
@@ -127,6 +127,13 @@ app.use((req, res, next) => {
 
 app.get("/getData", async(req, res) => {
     res.json(await data);
+});
+
+app.use(function(err,req,res,text) {
+    console.error(err.stack)
+    res.type('text/plain')
+    res.status(500)
+    res.send('internal server error 500')
 });
 
 // app.get("/getHeaders", async(req, res) => {
