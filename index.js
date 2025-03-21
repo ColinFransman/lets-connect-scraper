@@ -133,7 +133,7 @@ app.use(function(err,req,res,text) {
     console.error(err.stack)
     res.type('text/plain')
     res.status(500)
-    res.send('internal server error 500')
+    res.send(err.stack)
 });
 
 // app.get("/getHeaders", async(req, res) => {
