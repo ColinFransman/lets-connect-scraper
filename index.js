@@ -1,11 +1,14 @@
 import puppeteer from "puppeteer";
 
+import { config } from "dotenv";
+config();
+
 import { createRequire } from "module";
 import { arrayBuffer } from "stream/consumers";
 const require = createRequire(import.meta.url);
 const express = require('express');
 const app = express();
-const port = 4001;
+const port = process.env.PORT || 4001;
 
 
 const getData = async () => {
