@@ -6,7 +6,7 @@ config();
 import { createRequire } from "module";
 import { arrayBuffer } from "stream/consumers";
 const require = createRequire(import.meta.url);
-const express = import('express');
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 4001;
 
