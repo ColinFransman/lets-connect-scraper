@@ -94,9 +94,9 @@ const getData = async () => {
             let image = [];
             for (let index = 0; index < imageElements.length; index++) {
                 const element = imageElements[index];
-                //if (element.src != "https://xerte.deltion.nl/play.php?template_id=8708" && element.src != "https://xerte.deltion.nl/USER-FILES/8708-abvries-site/media/pijl13x10.png") {
+                if (element.src != "https://xerte.deltion.nl/play.php?template_id=8708" && element.src != "https://xerte.deltion.nl/USER-FILES/8708-abvries-site/media/pijl13x10.png") {
                     image.push(element.src);
-                //}
+                }
             }
 
             return { image };
