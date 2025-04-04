@@ -47,7 +47,7 @@ const getData = async () => {
         return Array.from(workshop).map((data) => {
             // fetch the sub-elements from the previously fetched workshop element
             // get the displayed text and return it (`.innerText`)
-            const text = data.querySelector(".accordion-heading").innerText;
+            const text = data.querySelector(".accordion-heading").innerText.trim();
     
             return { text };
         });
